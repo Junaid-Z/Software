@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import SMDashboard from "../Pages/SMDashboard";
 import Register from "../Screens/Admin_screens,/Register";
 import links from "./DashboardLinks";
@@ -10,7 +10,7 @@ export default function MyRouter() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<h1>ABC</h1>} />
+				<Route path="/" element={<Link to={'/login'}>Login</Link>} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/Admin"
 					element={
