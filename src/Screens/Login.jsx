@@ -65,8 +65,8 @@ function LoginPage() {
 			if (user?.uid) {
 				getData(`Users/${user.uid}`)
 					.then((snapshot) => {
-						if (snapshot.val() === "admin") {
-							history('/admin')
+						if (snapshot.val().role === "admin") {
+							history('/admin', { state: 'abc' })
 						}
 						else {
 							history('/')

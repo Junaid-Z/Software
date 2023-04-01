@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import SMDashboard from "../Pages/SMDashboard";
-import Register from "../Screens/Admin_screens,/Register";
-import links from "./DashboardLinks";
+import Register from "../Screens/Admin_screens/Register";
 import LoginPage from "../Screens/Login";
 import ProtectedRoute from "../Screens/ProtectedRoute";
-import StudentsList from "../Screens/Admin_screens,/StudentsList";
+import StudentsList from "../Screens/Admin_screens/StudentsList";
+import AdminDashboard from "../Screens/Admin_screens/AdminDashboard";
 
 export default function MyRouter() {
 	return (
@@ -14,7 +13,7 @@ export default function MyRouter() {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/Admin"
 					element={
-						<ProtectedRoute component={<SMDashboard links={links} />}
+						<ProtectedRoute component={<AdminDashboard />}
 							allowedRoles={['admin', 'student']}
 						/>} >
 					<Route path="/Admin/" element={<h1>STATS</h1>} />
